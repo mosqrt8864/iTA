@@ -6,23 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/Content/AssetsBS3/img/favicon.ico">
     <title>iTA test</title>
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/1-col-portfolio.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-		.row{
-			padding:10px 0;
-		}
-		.row img {
-			width:100%;
-		}
-		.row a {
-			color:#000;
-		}
-		.row h3{
-			color:#167AC6;
-		}
-	</style>
   </head>
 
   <body>
@@ -75,6 +62,7 @@
                         	<h3>{{videoItem.snippet.title}}</h3>
                         	<p>{{videoItem.snippet.description}}</p>
                         	<p>{{videoItem.snippet.publishedAt}}</p>
+                            <p>{{videoItem.viewCount}}</p>
                         	</div>
                         </a>
                 	</div>
@@ -145,7 +133,7 @@
 					 }
 				});
 			}
-		},mounted: function () {
+		},created: function () {
 			
 			$.ajax({
                 url: "https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyB4EYG5zAW_f7n0vgZ-k9Z79Rdd3L1eK4Y",
@@ -153,6 +141,7 @@
                 dataType:'json',
                 success: function(msg){
 					var videoItems = msg.items
+					
 					app.videoItems = videoItems;
 				},
                  error:function(xhr, ajaxOptions, thrownError){ 
