@@ -14,38 +14,41 @@
 
   <body>
 	<div id="app">
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top mynavbar" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">iTA test</a>
-        </div>
-        <div class="collapse navbar-collapse">
-        	<div class="col-sm-3 col-md-3 pull-right">
-            	<div class="navbar-form" role="search">
-                	<div class="input-group">
-                    	<input type="text" class="form-control" v-model="searchText" placeholde="搜尋...">
-                        <div class="input-group-btn">
-                        	<button class="btn btn-default" type="button" v-on:click="search(searchText)"> 
-                            	<span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </div>
+      	<div class="col-xs-5 col-sm-3 col-md-3 pull-right">
+            <div class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" v-model="searchText" placeholde="搜尋...">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button" v-on:click="search(searchText)"> 
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">iTA test</a>
+          
+        </div>
+        
+        <div class="collapse navbar-collapse">
+        	
         </div>
       </div>
     </nav>
     <div class="container">
     	<div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">iTA Test
+                <h1 class="page-header">iTA test
                 </h1>
             </div>
         </div>
         <div class="row bottom-buffer">
             <div class="col-md-1  ">
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle btn-default" type="button" data-toggle="dropdown">Filters
+                    <button class="btn dropdown-toggle btn-customize" type="button" data-toggle="dropdown">Filters
                     <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
@@ -60,14 +63,14 @@
             </div>
         </div>
         <div class="row bottom-buffer" v-for="videoItem in videoItems" >
-            <div class="col-md-7">
+            <div class="col-md-5">
                 <a target="_blank" v-bind:href="'https://www.youtube.com/watch?v=' + videoItem.id.videoId">
                     <img class="img-responsive" v-bind:src="videoItem.snippet.thumbnails.high.url" alt="">
                 </a>
             </div>
-            <div class="col-md-5">
-                <h3>{{videoItem.snippet.title}}</h3>
-                <h4>{{videoItem.snippet.publishedAt}}</h4>
+            <div class="col-md-7">
+                <div class="videoTitle">{{videoItem.snippet.title}}</div>
+                <div class="viedoPuclisheAt">{{videoItem.snippet.publishedAt}}</div>
                 <p>{{videoItem.snippet.description}}</p>
                 
             </div>

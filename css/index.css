@@ -1,15 +1,36 @@
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 70px; 
 }
 .bottom-buffer{
 	margin-bottom:10px;
 }
-.row img {
-	width:100%;
+
+.navbar .navbar-form{
+	padding:0 15px;
+	border:0;
+	-webkit-box-shadow:none;
+	box-shadow:none;
 }
-.row a {
-	color:#000;
+.mynavbar{
+	background-color:#0c4e8c !important;
 }
-.row h3{
+.mynavbar .navbar-brand{
+	color:#fff !important;
+}
+.btn-customize{
+	background-color:#0c4e8c;
+	border-color:#247ecc;
+	color:#fff;
+}
+.btn-customize:hover , .btn-customize:active{
+	background-color:#1c6ebc;
+	color:#fff !important;
+}
+.videoTitle{
+	font-size:24px;
 	color:#167AC6;
+}
+.viedoPuclisheAt{
+	font-size:18px;
+	color:#333;
 }
